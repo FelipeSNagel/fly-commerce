@@ -1,2 +1,10 @@
-# mega-hack
-Code desenvolvido durante a MegaHack da Shawee, integrantes Felipe Nagel, Jackson Silva de Aguiar, Patrício Brandalize, Robson Nasc e Victor Mesquini.
+# Megahack
+
+<p>Code desenvolvido durante a MegaHack da Shawee.</p>
+<p>Integrantes: </p>
+
+- Felipe Nagel - Desenvolvedor.
+- Jackson Silva de Aguiar - Desenvolvedor.
+- Patrício Brandalize - UI/Ux.
+- Robson Nasc - Business
+- Victor Mesquini - Desenvolvedor.
