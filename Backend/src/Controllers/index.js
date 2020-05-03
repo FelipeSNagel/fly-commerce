@@ -48,10 +48,54 @@ module.exports = {
         //const user_id = request.headers.authorization;
 
         await connection('stock').where('id', id).delete();
-       
-       
-        return response.status(204).send();
-    }
 
+
+        return response.status(204).send();
+    },
+
+    async products(request, response) {
+
+        return response.status(200).json(
+            {
+                "id": "1",
+                "name": "notebook",
+                "value": 2300,
+                "description": "Notebook ",
+                "status": true
+
+            },
+            {
+                "id": "2",
+                "name": "smartphone",
+                "value": 1000,
+                "description": "Celular inteligente",
+                "status": true
+
+            },
+            {
+                "id": "3",
+                "name": "smartphone 2",
+                "value": 1500,
+                "description": "Celular inteligente 2",
+                "status": true
+
+            }
+        );
+    },
+    async sendDroneConfirm(request, response) {
+        const Data = request.body;
+       
+        //verificar usuario
+        //const user_id = request.headers.authorization;
+
+        //Aqui terá verificação e escolha dos drones de automatizada pelo sistema
+
+        return response.status(200).send(
+            `Dados recebidos pelo drone:<br/>
+            ${Data}<br/>
+            Aguardando investimento para ter um drone e mandar o produto...
+            `
+        );
+    },
 
 }
