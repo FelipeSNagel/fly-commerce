@@ -4,11 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { SignUpRequest } from '../../store/modules/auth/actions';
 
 import Background from '../../components/Background';
-import Input from '../../components/Input';
 import Button from '../../components/Button';
 import LogoInitial from '../../components/LogoInitial';
 
-import { Container, Title, SignLink, SignText } from './styles';
+import { Container, Title, SignLink, SignText, Input } from './styles';
 
 export default function SignIn({ navigation }) {
 
@@ -42,7 +41,7 @@ export default function SignIn({ navigation }) {
           returnKeyType="next"
           onSubmitEditing={() => emailRef.current.focus()}
           value={user}
-          onChange={value => setUser(value)}
+          onChangeText={value => setUser(value)}
         />
 
         <Input
@@ -51,7 +50,7 @@ export default function SignIn({ navigation }) {
           returnKeyType="next"
           onSubmitEditing={() => passwordRef.current.focus()}
           value={email}
-          onChange={value => setEmail(value)}
+          onChangeText={value => setEmail(value)}
         />
 
         <Input
@@ -60,7 +59,7 @@ export default function SignIn({ navigation }) {
           returnKeyType="send"
           onSubmitEditing={handleSubmit}
           value={password}
-          onChange={value => setPassword(value)}
+          onChangeText={value => setPassword(value)}
         />
 
         <Button loading={loading} onPress={handleSubmit}>Registrar</Button>

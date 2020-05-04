@@ -1,21 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-
-import { updateAmountRequest } from '../../store/modules/cart/actions';
+import { useSelector } from 'react-redux';
+import { Text } from 'react-native';
 
 import { currencyFormat } from '../../utils/format';
 
 import Background from '../../components/Background';
 import Header from '../../components/Header';
-import Carts from '../../components/Cart';
 import ButtonGradient from '../../components/ButtonGradient';
+import Carts from '../../components/Cart';
 
-import { List, Title, Total } from './styles';
+import { List, Total } from './styles';
 
-export default function Cart({ navigation }) {
-  const dispatch = useDispatch();
-
-  const [total, setTotal ] = useState(0);
+export default function Checkout({ navigation }) {
+  const [total, setTotal] = useState(0);
 
   const data = useSelector(state => state.cart);
 
@@ -31,19 +28,18 @@ export default function Cart({ navigation }) {
   }, [data]);
 
   return <Background>
-    <Header navigation={navigation} />
-
-    <Title>Carrinho</Title>
+    <Header title="Carrinho" navigation={navigation} />
 
     <List
       data={data}
       renderItem={({ item }) => <Carts {...item} navigation={navigation} />}
       keyExtractor={item => item.id}
+      ListEmptyComponent={<Text>Nenhum item no carrinho!</Text>}
     />
 
 
     <Total>Total: {currencyFormat(total)}</Total>
-    <ButtonGradient>Finalizar</ButtonGradient>
+    {data.length > 0 && <ButtonGradient>Finalizar</ButtonGradient>}
 
   </Background>
 }

@@ -20,6 +20,7 @@ export const Total = styled.Text`
   font-weight: 300;
   color: #FFF;
   margin-top: 5px;
+  margin-bottom: 5px;
   padding-top: 5px;
   text-align: center;
 `;

@@ -11,6 +11,7 @@ import SignUp from './pages/SignUp';
 import Home from './pages/Home';
 import Cart from './pages/Cart';
 import Product from './pages/Product';
+import Search from './pages/Search';
 
 const Tabs = createBottomTabNavigator({
   Home: {
@@ -22,7 +23,7 @@ const Tabs = createBottomTabNavigator({
     }
   },
   Search: {
-    screen: Cart,
+    screen: Search,
     navigationOptions: {
       title: 'Procurar',
       tabBarIcon: ({tintColor}) =>

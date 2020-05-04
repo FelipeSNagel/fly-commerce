@@ -7,7 +7,7 @@ import Background from '../../components/Background';
 import Header from '../../components/Header';
 import Product from '../../components/Product';
 
-import { List, Title } from './styles';
+import { List } from './styles';
 
 export default function Home({ navigation }) {
   const dispatch = useDispatch();
@@ -20,9 +20,7 @@ export default function Home({ navigation }) {
 
 
   return <Background>
-    <Header navigation={navigation} />
-
-    <Title>Lista de Produtos</Title>
+    <Header title="Produtos em Destaque" navigation={navigation} />
 
     <List
       data={data}

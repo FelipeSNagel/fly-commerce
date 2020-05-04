@@ -3,11 +3,12 @@ import { connect } from 'react-redux';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import { Wrapper, Container, Logo, BasketContainer, ItemCount } from './styles';
+import { Wrapper, Container, Logo, BasketContainer, ItemCount, Title, Div } from './styles';
 import { AppRegistry } from 'react-native';
 
-function Header({ navigation, cartSize }) {
+function Header({ navigation, cartSize, title }) {
   return (
+    <>
     <Wrapper>
       <Container>
         <Logo />
@@ -17,6 +18,9 @@ function Header({ navigation, cartSize }) {
         </BasketContainer>
       </Container>
     </Wrapper>
+    <Title>{title}</Title>
+    <Div/>
+    </>
   );
 }
 

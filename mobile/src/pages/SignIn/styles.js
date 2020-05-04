@@ -1,5 +1,7 @@
 import styled from 'styled-components/native';
 import { Platform } from 'react-native';
+import InputT from '../../components/Input';
+
 
 export const Container = styled.KeyboardAvoidingView.attrs({
   enabled: Platform.OS === 'ios',
@@ -30,4 +32,8 @@ export const SignText = styled.Text`
   color: #00E6FF;
   font-size: 12px;
   font-weight: 300;
+`;
+
+export const Input = styled(InputT)`
+  margin-bottom: 25px;
 `;

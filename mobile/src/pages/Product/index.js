@@ -31,7 +31,7 @@ export default function Product({ navigation }) {
 
 
   return <Background>
-    <Header navigation={navigation} />
+    <Header navigation={navigation} title="Detalhe do Produto"/>
 
     <Content>
       <Image source={{ uri: data.image }} />

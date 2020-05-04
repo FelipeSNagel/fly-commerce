@@ -4,11 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { signInRequest } from '../../store/modules/auth/actions';
 
 import Background from '../../components/Background';
-import Input from '../../components/Input';
 import Button from '../../components/Button';
 import LogoInitial from '../../components/LogoInitial';
 
-import { Container, Title, SignLink, SignText } from './styles';
+import { Container, Title, SignLink, SignText, Input } from './styles';
 
 export default function SignIn({ navigation }) {
 
@@ -35,11 +34,12 @@ export default function SignIn({ navigation }) {
         <Title>AUTENTICAR</Title>
 
         <Input
+          type="text"
           placeholder="E-MAIL"
           returnKeyType="next"
           onSubmitEditing={() => passwordRef.current.focus()}
           value={email}
-          onChange={(value) => setEmail(value)}
+          onChangeText={(value) => setEmail(value)}
           />
 
         <Input
@@ -49,7 +49,7 @@ export default function SignIn({ navigation }) {
           returnKeyType="send"
           onSubmitEditing={handleSubmit}
           value={password}
-          onChange={(value) => setPassword(value)}
+          onChangeText={(value) => setPassword(value)}
         />
 
         <Button loading={loading} onPress={() => handleSubmit()}>CONECTAR</Button>

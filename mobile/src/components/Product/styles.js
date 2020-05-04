@@ -4,9 +4,9 @@ export const Container = styled.TouchableOpacity`
   flex-direction: row;
   justify-content: space-between;
   margin: 10px 15px 0 15px;
-  padding-top: 10px;
-  border-top-width: 1px;
-  border-top-color: #4A4A4A;
+  padding-bottom: 10px;
+  border-bottom-width: 1px;
+  border-bottom-color: #4A4A4A;
 `;
 
 export const Image = styled.Image.attrs({

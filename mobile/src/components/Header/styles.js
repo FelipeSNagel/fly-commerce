@@ -52,3 +52,17 @@ export const ItemCount = styled.Text`
   border-radius: 9px;
   overflow: hidden;
 `;
+
+export const Title = styled.Text`
+  font-size: 18px;
+  font-weight: 300;
+  color: #FFF;
+  margin-top: 5px;
+  text-align: center;
+`;
+
+export const Div = styled.View`
+  border-bottom-width: 1px;
+  border-bottom-color: #4A4A4A;
+  margin-top: 10px;
+`;
