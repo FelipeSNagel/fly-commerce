@@ -9,20 +9,29 @@ import { signInSuccess, signFailure } from './actions';
 
 export function* signIn({ payload }) {
   try {
-    const { email, password } = payload;
+    // const { email, password } = payload;
 
-    const resp = yield call(api.post, 'session', {
-      email,
-      password,
-    });
+    // const resp = yield call(api.post, 'session', {
+    //   email,
+    //   password,
+    // });
 
-    const { token, user } = resp.data;
+    const mock = {
+      token: 'adasdasdsad',
+      user: {
+        name: 'victor',
+        email: 'mesquini@live.com',
+      },
+    };
+
+    // const { token, user } = resp.data;
+    const { token, user } = mock;
 
     api.defaults.headers.Authorization = `Bearer ${token}`;
 
     yield put(signInSuccess(token, user));
 
-    history.push('/deliveries');
+    history.push('/dashboard');
   } catch (error) {
     toast.error('Falha na autenticação, verifique seus dados!');
     yield put(signFailure());

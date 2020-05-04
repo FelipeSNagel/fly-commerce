@@ -47,14 +47,15 @@ export default createGlobalStyle`
     list-style: none;
   }
 
-  button {
-    cursor: pointer;
+  p, h5, h2, h3, h1, h4 {
+    color: ${({ theme }) => theme.active};
   }
 
-  .form {
-    background: ${({ theme }) => theme.background};
-    border-radius: 6px;
-    padding: 25px;
-    margin-top: 25px;
+  li {
+    overflow: hidden;
+  }
+
+  button {
+    cursor: pointer;
   }
 `;

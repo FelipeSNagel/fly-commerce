@@ -9,6 +9,7 @@ export const lightTheme = {
   textHeader: 'rgba(0, 0, 0, 0.5)',
   active: '#000',
   isFocused: '#0777D9',
+  button: '#00E6FF',
 };
 
 export const darkTheme = {
@@ -22,4 +23,5 @@ export const darkTheme = {
   body: 'rgba(0, 0, 0, 0.8)',
   active: '#fff',
   isFocused: '#1e205D',
+  button: '#00E6FF',
 };
