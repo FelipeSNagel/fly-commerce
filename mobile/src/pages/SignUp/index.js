@@ -1,4 +1,7 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { SignUpRequest } from '../../store/modules/auth/actions';
 
 import Background from '../../components/Background';
 import Input from '../../components/Input';
@@ -9,12 +12,20 @@ import { Container, Title, SignLink, SignText } from './styles';
 
 export default function SignIn({ navigation }) {
 
-  const usernameRef = useRef(null);
+  const dispatch = useDispatch();
+
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
 
+  const [ user, setUser ] = useState('');
+  const [ email, setEmail ] = useState('');
+  const [ password, setPassword ] = useState('');
+
+  const loading = useSelector(state => state.auth.loading);
+
+
   function handleSubmit(){
-    console.log('teste');
+    dispatch(SignUpRequest(user, email, password));
   }
 
   return (
@@ -27,10 +38,11 @@ export default function SignIn({ navigation }) {
 
 
         <Input
-          ref={usernameRef}
           placeholder="Digite seu Nome"
           returnKeyType="next"
           onSubmitEditing={() => emailRef.current.focus()}
+          value={user}
+          onChange={value => setUser(value)}
         />
 
         <Input
@@ -38,6 +50,8 @@ export default function SignIn({ navigation }) {
           placeholder="Digite seu E-mail"
           returnKeyType="next"
           onSubmitEditing={() => passwordRef.current.focus()}
+          value={email}
+          onChange={value => setEmail(value)}
         />
 
         <Input
@@ -45,9 +59,11 @@ export default function SignIn({ navigation }) {
           placeholder="Digite sua Senha"
           returnKeyType="send"
           onSubmitEditing={handleSubmit}
+          value={password}
+          onChange={value => setPassword(value)}
         />
 
-        <Button onPress={handleSubmit}>Registrar</Button>
+        <Button loading={loading} onPress={handleSubmit}>Registrar</Button>
 
         <SignLink onPress={() => navigation.navigate('SignIn')}>
           <SignText>Já possui Conta?</SignText>

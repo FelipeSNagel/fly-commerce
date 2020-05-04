@@ -1,38 +1,68 @@
 import React from 'react';
 
-import { createAppContainer, createSwitchNavigator  } from 'react-navigation';
+import { MaterialIcons as Icon} from '@expo/vector-icons';
+
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Home from './pages/Home';
+import Cart from './pages/Cart';
+import Product from './pages/Product';
 
-
-import colors from './styles/colors';
-
-const App =  createStackNavigator(
-  {
-    Home
+const Tabs = createBottomTabNavigator({
+  Home: {
+    screen: Home,
+    navigationOptions: {
+      title: 'Home',
+      tabBarIcon: ({tintColor}) =>
+        <Icon name='home' size={25} color={tintColor} />
+    }
   },
-  {
-    initialRouteName: 'Home',
-    defaultNavigationOptions: navigation => ({
-      cardStyle: {
-        backgroundColor: colors.dark,
-      },
-    }),
-  }
-)
-
-
-const Auth = createSwitchNavigator({
-  SignIn,
-  SignUp,
-  App,
+  Search: {
+    screen: Cart,
+    navigationOptions: {
+      title: 'Procurar',
+      tabBarIcon: ({tintColor}) =>
+        <Icon name='search' size={25} color={tintColor} />
+    }
+  },
+  Cart: {
+    screen: Cart,
+    navigationOptions: {
+      title: 'Carrinho',
+      tabBarIcon: ({tintColor}) =>
+        <Icon name='shopping-cart' size={25} color={tintColor} />
+    }
+  },
 }, {
-  initialRouteName: 'SignIn'
+  tabBarOptions: {
+    showIcon: true,
+    activeTintColor: '#00E6FF',
+    inactiveTintColor: '#FFF',
+    activeBackgroundColor: '#17171f',
+    inactiveBackgroundColor: '#17171f',
+    style: {
+      height: 50,
+/*       borderTopWidth: 2,
+      borderTopColor: '#4A4A4A', */
+    }
+  }
 });
 
-const Routes = createAppContainer(Auth);
+const Sign = createSwitchNavigator({
+  SignIn,
+  SignUp,
+});
 
-export default Routes;
+export default (signedIn = false) => createAppContainer(
+  createSwitchNavigator({
+    Sign,
+    Tabs,
+    Product,
+  }, {
+    initialRouteName: signedIn ? 'Tabs' : 'Sign'
+  })
+);

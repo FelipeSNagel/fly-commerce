@@ -1,4 +1,7 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { signInRequest } from '../../store/modules/auth/actions';
 
 import Background from '../../components/Background';
 import Input from '../../components/Input';
@@ -8,11 +11,19 @@ import LogoInitial from '../../components/LogoInitial';
 import { Container, Title, SignLink, SignText } from './styles';
 
 export default function SignIn({ navigation }) {
-  const usernameRef = useRef(null);
+
+  const distpatch = useDispatch();
+
   const passwordRef = useRef(null);
 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const loading = useSelector(state => state.auth.loading);
+
+
   function handleSubmit(){
-    console.log(usernameRef.current);
+    distpatch(signInRequest(email, password));
   }
 
   return (
@@ -24,11 +35,12 @@ export default function SignIn({ navigation }) {
         <Title>AUTENTICAR</Title>
 
         <Input
-          ref={usernameRef}
-          placeholder="USUÁRIO"
+          placeholder="E-MAIL"
           returnKeyType="next"
           onSubmitEditing={() => passwordRef.current.focus()}
-        />
+          value={email}
+          onChange={(value) => setEmail(value)}
+          />
 
         <Input
           ref={passwordRef}
@@ -36,9 +48,11 @@ export default function SignIn({ navigation }) {
           placeholder="SENHA"
           returnKeyType="send"
           onSubmitEditing={handleSubmit}
+          value={password}
+          onChange={(value) => setPassword(value)}
         />
 
-        <Button onPress={() => handleSubmit()}>CONECTAR</Button>
+        <Button loading={loading} onPress={() => handleSubmit()}>CONECTAR</Button>
 
         <SignLink onPress={() => navigation.navigate('SignUp')}>
           <SignText>Criar Conta</SignText>

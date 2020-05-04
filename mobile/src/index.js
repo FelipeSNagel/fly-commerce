@@ -4,18 +4,15 @@ import './config/ReactotronConfig';
 import { StatusBar } from 'react-native';
 import store from './store';
 
-import Routes from './routes';
-import NavigationService from './services/navigation';
+import App from './App';
 
-function App() {
+function Index() {
   return (
     <Provider store={store}>
       <StatusBar barStyle="light-content" />
-      <Routes
-        ref={(navigatorRef) => NavigationService.setNavigator(navigatorRef)}
-      />
+      <App />
     </Provider>
   );
 }
 
-export default App;
+export default Index;

@@ -11,11 +11,10 @@ export function* signIn({ payload }) {
 
     const { email, password } = payload;
 
-    const response = yield call(api.post, 'sessions', {
+/*     const response = yield call(api.post, 'sessions', {
       email,
       password
     });
-
     const { token, user } = response.data;
 
     if (!user.provider) {
@@ -24,6 +23,10 @@ export function* signIn({ payload }) {
     }
 
     api.defaults.headers.Authorization = `Bearer ${token}`;
+   */
+
+    token = "1298u9dsajldiajsdlasidj018920iu04912j42109josidjf";
+    user = "Felipe Nagel";
 
     yield put(signInSuccess(token, user))
 
@@ -37,18 +40,18 @@ export function* signIn({ payload }) {
 
 }
 
-export function* signUp({payload}){
+export function* signUp({ payload }) {
   try {
 
-    const {name, email, password } = payload;
+    const { name, email, password } = payload;
 
-    yield call(api.post, 'users', {
+/*     yield call(api.post, 'users', {
       name,
       email,
       password,
       provider: true,
     });
-
+ */
     //history.push('/adm/signin');
 
   } catch (err) {
@@ -59,7 +62,7 @@ export function* signUp({payload}){
   }
 }
 
-export function signOut(){
+export function signOut() {
   //history.push('/adm/signin');
 }
 

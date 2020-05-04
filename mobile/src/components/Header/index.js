@@ -8,8 +8,8 @@ import { AppRegistry } from 'react-native';
 
 function Header({ navigation, cartSize }) {
   return (
-    <Wrapper style={{ marginVertical: 10 }}>
-      <Container style={{ marginVertical: 5 }}>
+    <Wrapper>
+      <Container>
         <Logo />
         <BasketContainer onPress={() => navigation.navigate('Cart')}>
           <Icon name="shopping-basket" color="#FFF" size={24} />
