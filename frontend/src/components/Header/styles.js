@@ -4,9 +4,31 @@ import { lighten } from 'polished';
 export const Container = styled.div`
   width: 100%;
 
-  img {
-    padding-right: 20px;
-    border-right: 1px solid #eee;
+  .avatar {
+    border-left: 1px solid ${({ theme }) => theme.active};
+    border-right: 1px solid ${({ theme }) => theme.active};
+    transition: all 0.2 ease;
+
+    svg {
+      margin-left: 5px;
+      padding-right: 5px;
+    }
+
+    margin-right: 5px;
+  }
+
+  .form-inline {
+    justify-content: center;
+
+    svg {
+      position: absolute;
+      left: calc(50% - -80px);
+      color: rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .form-control {
+    width: 100%;
   }
 
   .navbar-nav {
@@ -16,20 +38,23 @@ export const Container = styled.div`
   }
 
   .navbar-collapse {
+    justify-content: flex-end;
   }
 
   .navbar {
     border-radius: 4px;
+    display: grid;
+    grid-template-columns: 250px repeat(2, 1fr);
+    grid-gap: 20px;
   }
 
   a {
-    font-weight: bold;
     margin-right: 15px;
     text-decoration: none;
-    color: ${({ theme }) => theme.textHeader};
+    color: ${({ theme }) => theme.active};
 
     &:hover {
-      color: ${lighten(0.1, '#7159c1')};
+      color: ${lighten(0.1, '#000')};
     }
   }
 
@@ -53,8 +78,7 @@ export const ToggleContainer = styled.button`
   font-size: 0.5rem;
   padding: 0.2rem;
   overflow: hidden;
-  margin-right: 20px;
-  margin-top: 10%;
+  margin-left: 10px;
 
   svg {
     width: 2rem;
@@ -74,5 +98,18 @@ export const ToggleContainer = styled.button`
   @media (max-width: 992px) {
     display: initial;
     margin: 10px 0 10px;
+  }
+`;
+
+export const HeaderSec = styled.div`
+  background: ${({ theme }) => theme.background};
+  font-weight: bold;
+
+  div {
+    align-items: center;
+  }
+
+  @media (max-width: 990px) {
+    display: none;
   }
 `;

@@ -20,7 +20,7 @@ import {
   Loading,
 } from './styles';
 
-import api from '../../services/api';
+// import api from '../../services/api';
 import cepApi from '~/services/cep';
 
 const schema = Yup.object().shape({
