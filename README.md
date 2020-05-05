@@ -24,3 +24,14 @@
 <p>ESTOQUE EMERGENCIAL:</p>
 <p> Muitas vezes varejistas possuem estoque "parado", enquanto outros têm dificuldades para reposição, pensando nisso, foi criado a solução dos estoques emergenciais para agilizar e viabilizar os estoques de todos os varejos conforme a demanda. Os varejos cadastrarão os estoques que desejão negociar no sistema, uma função agregada ao sistema que a VTEX já tem, e terá uma listagem contendo todos os estoques negociáveis que demais varejos cadastrarão. Caso o varejista se interessar em obter o estoque, deverá apertar em "NEGOCIAR", e apartir dai iniciará o processo de reposição de estoque.
 </p>
+
+<p align="center">
+  <image width="30%" src="https://github.com/FSNagel/mega-hack/blob/master/images/1.jpeg" title="image App"/>
+  <image width="30%" src="https://github.com/FSNagel/mega-hack/blob/master/images/2.jpeg" title="image App"/>
+  <image width="30%" src="https://github.com/FSNagel/mega-hack/blob/master/images/3.jpeg" title="image App"/>
+  <image width="30%" src="https://github.com/FSNagel/mega-hack/blob/master/images/4.jpeg" title="image App"/>
+  <image width="30%" src="https://github.com/FSNagel/mega-hack/blob/master/images/5.jpeg" title="image App"/>
+  <image width="30%" src="https://github.com/FSNagel/mega-hack/blob/master/images/6.jpeg" title="image App"/>
+  <image width="30%" src="https://github.com/FSNagel/mega-hack/blob/master/images/7.jpeg" title="image App"/>
+
+  </p>
