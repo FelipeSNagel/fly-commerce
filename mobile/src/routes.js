@@ -12,6 +12,8 @@ import Home from './pages/Home';
 import Cart from './pages/Cart';
 import Product from './pages/Product';
 import Search from './pages/Search';
+import Checkin from './pages/Checkin';
+import Maps from './pages/Maps';
 
 const Tabs = createBottomTabNavigator({
   Home: {
@@ -63,6 +65,8 @@ export default (signedIn = false) => createAppContainer(
     Sign,
     Tabs,
     Product,
+    Checkin,
+    Maps
   }, {
     initialRouteName: signedIn ? 'Tabs' : 'Sign'
   })

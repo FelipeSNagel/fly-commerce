@@ -11,7 +11,7 @@ import Carts from '../../components/Cart';
 
 import { List, Total } from './styles';
 
-export default function Checkout({ navigation }) {
+export default function Cart({ navigation }) {
   const [total, setTotal] = useState(0);
 
   const data = useSelector(state => state.cart);
@@ -39,7 +39,7 @@ export default function Checkout({ navigation }) {
 
 
     <Total>Total: {currencyFormat(total)}</Total>
-    {data.length > 0 && <ButtonGradient>Finalizar</ButtonGradient>}
+    {data.length > 0 && <ButtonGradient onPress={() => navigation.navigate('Checkin')}>Ir para Pagamento</ButtonGradient>}
 
   </Background>
 }
