@@ -25,14 +25,14 @@
       "package": "com.company",
       "config": {
         "googleMaps": {
-          "apiKey": "AIzaSyAKvX7airuTaXxY4BAjF9ArWxOYfIQDmXA"
+          "apiKey": ""
         }
       }
     },
     "ios": {
       "supportsTablet": true,
       "config": {
-        "googleMapsApiKey": "AIzaSyAKvX7airuTaXxY4BAjF9ArWxOYfIQDmXA"
+        "googleMapsApiKey": ""
       }
     },
     "description": "Aplicativo desenvolvido durante a MegaHack da Shawee - Desafio VTEX. Integrantes: Felipe Nagel - Desenvolvedor, Jackson Wellington - Desenvolvedor, Patrício Brandalize - UI/UX, Robson Nasc - Business, Victor Mesquini - Desenvolvedor."
