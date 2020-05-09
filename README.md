@@ -3,11 +3,10 @@
 <p>Code desenvolvido durante a MegaHack da Shawee.</p>
 <p>Integrantes: </p>
 
-- Felipe Nagel - Desenvolvedor.
-- Jackson Wellington - Desenvolvedor.
-- Patrício Brandalize - UI/Ux.
-- Robson Nasc - Business
-- Victor Mesquini - Desenvolvedor.
+- <a href="https://www.linkedin.com/in/felipe-schons-nagel-2643571a4/" target="_blank">Felipe Nagel - Desenvolvedor.</a>
+- <a href="https://www.linkedin.com/in/jackson-wellington" target="_blank">Jackson Wellington - Desenvolvedor.</a>
+- <a href="https://www.linkedin.com/in/patricio-brandalize-22b0a6191/" target="_blank">Patrício Brandalize - UI/Ux.</a>
+- <a href="https://www.linkedin.com/in/mesquini/" target="_blank">Victor Mesquini - Desenvolvedor.</a>
 
 ## Soluções para o varejo:
 
